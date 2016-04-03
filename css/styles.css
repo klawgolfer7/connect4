@@ -24,11 +24,11 @@ h3 {
 	font-family: 'Andale Mono', monospace;
 }
 
-.player1 {
+.blackplayer {
 	background-color: black;
 }
 
-.player2 {
+.redplayer {
 	background-color: red;
 }
 
