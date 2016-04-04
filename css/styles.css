@@ -18,10 +18,11 @@ h2 {
 	font-size: 30px;
 }
 
-h3 {
-	float: right;
-	text-align: center;
-	font-family: 'Andale Mono', monospace;
+.footer {
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .blackplayer {
@@ -37,8 +38,10 @@ take up less of the screen space*/
 
 .col-container{
 	padding-top: 15px;
-	padding-right: 10%;
-	padding-left: 10%
+	padding-right: 50px;
+	padding-left: 50px;
+	margin: 50px auto 0;
+    width: 500px;
 }
 
 /*col-1 class is used for each indivdual column
@@ -47,15 +50,62 @@ on the board*/
 .col-1 { 
 	width: 14.28%;
 	float: left;
-	border: 1px solid grey;
+	border: 1.5px solid gold;
+
+
  }
 
 .cell {
 	text-align: center;
-	border: 1px solid grey;
+	border: 3px solid gold;
 	width: 100%;
-	height: 75px;
+	height: 55px;
+	border-radius: 50%;
 }
+
+@media (max-width: 460px) {
+
+  .col-container {
+    margin: 20px auto 0;
+    width: 400px;
+  }
+
+  .col-1 { 
+	width: 14.28%;
+	border: 1px solid gold;
+
+ }
+
+  .cell {
+    width: 100%;
+    height: 40px;
+    border: 2px solid gold;
+  }
+}
+
+
+
+/*@media (max-width: 900px) {
+
+  .col-container {
+    margin: 20px auto 0;
+    width: 240px;
+  }
+
+  .col-1 { 
+	width: 14.28%;
+	float: left;
+	border: none;
+
+ }
+
+  .cell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid gold;
+  }
+}
+*/
 
 
 
