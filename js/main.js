@@ -1,54 +1,63 @@
-// Jquery and Javascript for Connect4
 
+// Jquery and Javascript for Connect4
 $(document).ready(function() {
 
 
-	var config = {
+    var config = {
         blackPlayer: "Player 1",
         redPlayer: "Player 2",
         startingPlayer: "blackPlayer",
     };
 
-	var currentPlayer = config.startingPlayer;
+    var currentPlayer = config.startingPlayer;
 
-	// Function to change player
+    // Function to change player
 
-	function changePlayer() {
-    if (currentPlayer === 'black') {
-        currentPlayer = 'red';
-    } else {
-        currentPlayer = 'black';
-    }
+    function changePlayer() {
+        if (currentPlayer === 'blackPlayer') {
+            currentPlayer = 'redPlayer';
+        } else {
+            currentPlayer = 'blackPlayer';
+        };
+    };
 
     // Empty board 
 
-	var state = [[],
-				 [],
-				 [],
-				 [],
-				 [],
-				 [],
-				 []];
+    var state = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
 
-		// trigger the game by clicking on a position on the board
+    // trigger the game by clicking on a position on the board
 
-		$(".col-1").on('click', function(e) {
+    $(".col-1").on('click', function(e) {
 
-			var $col = $(e.currentTarget);
-			var colindex = $col.index();
+        var $col = $(e.currentTarget);
+        var colindex = $col.index();
 
-			state[colindex].push(currentPlayer);
+        state[colindex].push(currentPlayer);
 
-			var colarray= state[colindex];
+        var colarray = state[colindex];
 
-			for (var i=0; i<colarray.length; i++);
+        for (var i = 0; i < colarray.length; i++) {
+            var $cell = $col.find('.cell').get(5 - i)
+            $($cell).addClass(colarray[i])
+            // $($cell).addClass(currentPlayer)
+        };
 
-				var $cell= $col.find('.cell').get(5-i);
 
-				$cell.addClass('currentPlayer');
+    changePlayer();
 
 
     });
-
-
 });
+
+
+
+
+
