@@ -7,6 +7,7 @@ $(document).ready(function() {
         blackPlayer: "Player 1",
         redPlayer: "Player 2",
         startingPlayer: "blackPlayer",
+        playerPrefix: "Current Player is: "
     };
 
     var currentPlayer = config.startingPlayer;
@@ -36,10 +37,9 @@ $(document).ready(function() {
     // trigger the game by clicking on a position on the board
 
     $(".col-1").on('click', function(e) {
-
         var $col = $(e.currentTarget);
         var colindex = $col.index();
-
+         // put currents players into the boards(state) array
         state[colindex].push(currentPlayer);
 
         var colarray = state[colindex];
@@ -50,8 +50,9 @@ $(document).ready(function() {
             // $($cell).addClass(currentPlayer)
         };
 
-
+      // Initiates the change player function 
     changePlayer();
+
 
 
     });
